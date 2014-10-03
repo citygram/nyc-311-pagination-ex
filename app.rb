@@ -4,7 +4,7 @@ require 'faraday'
 require 'sinatra'
 
 configure do
-  set :ceiling, 5000
+  set :ceiling, 10_000
   set :target_host, 'https://data.cityofnewyork.us'
   set :time_zone, ActiveSupport::TimeZone["Eastern Time (US & Canada)"]
 end
