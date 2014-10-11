@@ -41,8 +41,8 @@ class Transformation < Struct.new(:response_body)
     when 'ADDRESS'
       "#{time.strftime("%m/%d  %I:%M %p")} - A new 311 case has been opened at #{item['incident_address'].titleize} in #{city.capitalize}."
     when 'INTERSECTION'
-      intersection_street_1 = item['intersection_street_1']
-      intersection_street_2 = item['intersection_street_2']
+      intersection_street_1 = item['intersection_street_1'] || 'unknown'
+      intersection_street_2 = item['intersection_street_2'] || 'unknown'
       "#{time.strftime("%m/%d  %I:%M %p")} - A new 311 case has been opened at the intersection of #{intersection_street_1.titleize} and #{intersection_street_2.titleize} in #{city.capitalize}."
     when 'BLOCKFACE'
       cross_street_1 = item['cross_street_1']
